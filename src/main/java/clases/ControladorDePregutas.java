@@ -3,17 +3,19 @@ package clases;
 import java.util.ArrayList;
 
 import utilities.AgregarPreguntas;
+import utilities.GeneradorAleatorio;
 import utilities.MessagesWithJboss;
 
 public class ControladorDePregutas {
     MessagesWithJboss message = new MessagesWithJboss();
 
-    AgregarPreguntas aleatorio = new AgregarPreguntas();
-    Integer numeroAleatorio = aleatorio.aleatorio(0,5);
-    Integer numeroAleatorio1 = aleatorio.aleatorio(5,10);
-    Integer numeroAleatorio2 = aleatorio.aleatorio(10,15);
-    Integer numeroAleatorio3 = aleatorio.aleatorio(15,20);
-    Integer numeroAleatorio4 = aleatorio.aleatorio(20,25);
+    GeneradorAleatorio aleatorio=new GeneradorAleatorio();
+    private Integer formaMostrar=aleatorio.integerAleatorio(1,4);
+    Integer numeroAleatorio = aleatorio.integerAleatorio(0,5);
+    Integer numeroAleatorio1 = aleatorio.integerAleatorio(5,10);
+    Integer numeroAleatorio2 = aleatorio.integerAleatorio(10,15);
+    Integer numeroAleatorio3 = aleatorio.integerAleatorio(15,20);
+    Integer numeroAleatorio4 = aleatorio.integerAleatorio(20,25);
 
     private Integer rondaJuego = 1;
     ArrayList<Pregunta> arrayPreguntas = new ArrayList<Pregunta>();
@@ -45,7 +47,15 @@ public class ControladorDePregutas {
             respuesta2 = this.arrayPreguntas.get(numeroAleatorio).incorrecta1;
             respuesta3 = this.arrayPreguntas.get(numeroAleatorio).incorrecta2;
             respuesta4 = this.arrayPreguntas.get(numeroAleatorio).incorrecta3;
-            message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            if(formaMostrar==1){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            }else if(formaMostrar==2){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta2+"\nOpcion 2:"+respuesta1+"\nOpcion 3:"+respuesta4+"\nOpcion 4:"+respuesta3);
+            }else if(formaMostrar==3){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta3+"\nOpcion 2:"+respuesta4+"\nOpcion 3:"+respuesta1+"\nOpcion 4:"+respuesta2);
+            }else if(formaMostrar==4){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta4+"\nOpcion 2:"+respuesta3+"\nOpcion 3:"+respuesta2+"\nOpcion 4:"+respuesta1);
+            }
 
         }
         else if(this.rondaJuego==2){
@@ -55,7 +65,15 @@ public class ControladorDePregutas {
             respuesta2 = this.arrayPreguntas.get(numeroAleatorio1).incorrecta1;
             respuesta3 = this.arrayPreguntas.get(numeroAleatorio1).incorrecta2;
             respuesta4 = this.arrayPreguntas.get(numeroAleatorio1).incorrecta3;
-            message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            if(formaMostrar==1){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            }else if(formaMostrar==2){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta2+"\nOpcion 2:"+respuesta1+"\nOpcion 3:"+respuesta4+"\nOpcion 4:"+respuesta3);
+            }else if(formaMostrar==3){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta3+"\nOpcion 2:"+respuesta4+"\nOpcion 3:"+respuesta1+"\nOpcion 4:"+respuesta2);
+            }else if(formaMostrar==4){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta4+"\nOpcion 2:"+respuesta3+"\nOpcion 3:"+respuesta2+"\nOpcion 4:"+respuesta1);
+            }
 
         }
         else if(this.rondaJuego==3){
@@ -65,7 +83,15 @@ public class ControladorDePregutas {
             respuesta2 = this.arrayPreguntas.get(numeroAleatorio2).incorrecta1;
             respuesta3 = this.arrayPreguntas.get(numeroAleatorio2).incorrecta2;
             respuesta4 = this.arrayPreguntas.get(numeroAleatorio2).incorrecta3;
-            message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            if(formaMostrar==1){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            }else if(formaMostrar==2){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta2+"\nOpcion 2:"+respuesta1+"\nOpcion 3:"+respuesta4+"\nOpcion 4:"+respuesta3);
+            }else if(formaMostrar==3){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta3+"\nOpcion 2:"+respuesta4+"\nOpcion 3:"+respuesta1+"\nOpcion 4:"+respuesta2);
+            }else if(formaMostrar==4){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta4+"\nOpcion 2:"+respuesta3+"\nOpcion 3:"+respuesta2+"\nOpcion 4:"+respuesta1);
+            }
 
 
         }
@@ -76,8 +102,15 @@ public class ControladorDePregutas {
             respuesta2 = this.arrayPreguntas.get(numeroAleatorio3).incorrecta1;
             respuesta3 = this.arrayPreguntas.get(numeroAleatorio3).incorrecta2;
             respuesta4 = this.arrayPreguntas.get(numeroAleatorio3).incorrecta3;
-            message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
-
+            if(formaMostrar==1){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            }else if(formaMostrar==2){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta2+"\nOpcion 2:"+respuesta1+"\nOpcion 3:"+respuesta4+"\nOpcion 4:"+respuesta3);
+            }else if(formaMostrar==3){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta3+"\nOpcion 2:"+respuesta4+"\nOpcion 3:"+respuesta1+"\nOpcion 4:"+respuesta2);
+            }else if(formaMostrar==4){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta4+"\nOpcion 2:"+respuesta3+"\nOpcion 3:"+respuesta2+"\nOpcion 4:"+respuesta1);
+            }
 
         }
         else if(this.rondaJuego==5){
@@ -87,11 +120,33 @@ public class ControladorDePregutas {
             respuesta2 = this.arrayPreguntas.get(numeroAleatorio4).incorrecta1;
             respuesta3 = this.arrayPreguntas.get(numeroAleatorio4).incorrecta2;
             respuesta4 = this.arrayPreguntas.get(numeroAleatorio4).incorrecta3;
-            message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            if(formaMostrar==1){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta1+"\nOpcion 2:"+respuesta2+"\nOpcion 3:"+respuesta3+"\nOpcion 4:"+respuesta4);
+            }else if(formaMostrar==2){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta2+"\nOpcion 2:"+respuesta1+"\nOpcion 3:"+respuesta4+"\nOpcion 4:"+respuesta3);
+            }else if(formaMostrar==3){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta3+"\nOpcion 2:"+respuesta4+"\nOpcion 3:"+respuesta1+"\nOpcion 4:"+respuesta2);
+            }else if(formaMostrar==4){
+                message.printMessage(">"+pregunta+"\nCategoria:"+categoria+"\nOpcion 1:"+respuesta4+"\nOpcion 2:"+respuesta3+"\nOpcion 3:"+respuesta2+"\nOpcion 4:"+respuesta1);
+            }
 
         }
         return respuesta1;
 
+    }
+    public void setRondaJuego(Integer rondaJuego) {
+        this.rondaJuego = rondaJuego;
+    }
+
+    public Integer getRondaJuego() {
+        return rondaJuego;
+    }
+
+    public void setFormaMostrar(Integer formaMostrar) {
+        this.formaMostrar = formaMostrar;
+    }
+    public Integer getFormaMostrar() {
+        return formaMostrar;
     }
 
 }
