@@ -10,15 +10,17 @@ public class App {
         System.out.println("Funciona!");
         ConectionToSQL con= new ConectionToSQL();
         con.connectionSql();
-
         AgregarPreguntas qwerty = new AgregarPreguntas();
         // qwerty.agregarTodasLasPreguntas();
-        ArrayList<Pregunta> preguntas = qwerty.agregarTodasLasPreguntas();
+        //ArrayList<Pregunta> preguntas = qwerty.agregarTodasLasPreguntas();
+        //String pregunta=preguntas.get(5).toString();
 
-        String pregunta=preguntas.get(5).toString();
 
         ControladorDePregutas control = new ControladorDePregutas();
+        control.agregarPreguntas(qwerty.agregarTodasLasPreguntas());
+        String rCorrecta=control.mostrarPreguntas();
+        System.out.println(rCorrecta);
 
-        System.out.println(pregunta);
+
     }
 }
