@@ -10,12 +10,12 @@ public class ControladorDePregutas {
     MessagesWithJboss message = new MessagesWithJboss();
 
     GeneradorAleatorio aleatorio=new GeneradorAleatorio();
-    private Integer formaMostrar=aleatorio.integerAleatorio(1,4);
-    Integer numeroAleatorio = aleatorio.integerAleatorio(0,5);
-    Integer numeroAleatorio1 = aleatorio.integerAleatorio(5,10);
-    Integer numeroAleatorio2 = aleatorio.integerAleatorio(10,15);
-    Integer numeroAleatorio3 = aleatorio.integerAleatorio(15,20);
-    Integer numeroAleatorio4 = aleatorio.integerAleatorio(20,25);
+    private Integer formaMostrar;
+    Integer numeroAleatorio = aleatorio.integerAleatorio(0,3);
+    Integer numeroAleatorio1 = aleatorio.integerAleatorio(4,7);
+    Integer numeroAleatorio2 = aleatorio.integerAleatorio(8,11);
+    Integer numeroAleatorio3 = aleatorio.integerAleatorio(12,15);
+    Integer numeroAleatorio4 = aleatorio.integerAleatorio(16,20);
 
     private Integer rondaJuego = 1;
     ArrayList<Pregunta> arrayPreguntas = new ArrayList<Pregunta>();
