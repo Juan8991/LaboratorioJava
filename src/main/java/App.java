@@ -3,16 +3,14 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import clases.ControladorDePregutas;
+import clases.Jugador;
 import clases.Pregunta;
-import utilities.AgregarPreguntas;
-import utilities.ConectionToSQL;
-import utilities.MessagesWithJboss;
-import utilities.GeneradorAleatorio;
+import utilities.*;
 
 public class App {
     public static void main(String[] args) {
         MessagesWithJboss message = new MessagesWithJboss();
-        
+
         Scanner read = new Scanner(System.in);
         // System.out.println(numero);
         // System.out.println(numero);
@@ -44,7 +42,7 @@ public class App {
 
         GeneradorAleatorio aleatorio = new GeneradorAleatorio();
         
-
+        String nombreJugador;
         boolean salir = false;
 
         Scanner getData = new Scanner(System.in);
@@ -64,7 +62,9 @@ public class App {
                 if (opciones == 0) {
                     System.out.println("salió, ganaste:" +puntajeJuego);
                     // pido nombre
-                    // finalizarJuego(puntajeJuego, nombre);
+                    System.out.println("Ingrese su nombre:");
+                    nombreJugador=read.nextLine();
+                    finalizarJuego(puntajeJuego,nombreJugador);
                     salir = true;
                 } else if (opciones == control.getFormaMostrar()) {
                     System.out.println("Correcto");
@@ -78,8 +78,9 @@ public class App {
 
                 if(rondaActual >5 ){
                     System.out.println("ganaste: "+puntajeJuego );
-
-                    // finalizarJuego(nombre)
+                    System.out.println("Ingrese su nombre:");
+                    nombreJugador=read.nextLine();
+                    finalizarJuego(puntajeJuego,nombreJugador);
 
                     salir = true;
                 }
@@ -93,6 +94,11 @@ public class App {
     }
 
     public static void finalizarJuego(Integer puntaje, String nombre) {
+        ConectionToSQL con= new ConectionToSQL();
+        con.connectionSql();
+        DbOperaciones operacion=new DbOperaciones();
+        Jugador jugador= new Jugador(nombre,puntaje);
+        operacion.saveJugador(jugador,con);
         // hago un insert de nombre con el puntaje 
         // guardar puntos en la db
     }

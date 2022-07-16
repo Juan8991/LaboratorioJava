@@ -55,9 +55,5 @@ public class AgregarPreguntas {
         return colecionDeTodasLasPreguntas;
     }
 
-    public Integer aleatorio(Integer min,Integer max){
-            Integer resultado;
-            resultado=(int)Math.floor((Math.random()*(max-min-1))+min);
-            return resultado;
-    }
+
 }

@@ -9,8 +9,8 @@ public class ConectionToSQL {
     MessagesWithJboss message=new MessagesWithJboss();
     public Connection connectionSql(){
         try{
-            //conection = DriverManager.getConnection("jdbc:mysql://localhost:3325/laboratorio_java","root","");
-            conection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/laboratorio_java","postgres","qwerty");
+            conection = DriverManager.getConnection("jdbc:mysql://localhost:3325/laboratorio_java","root","");
+            //conection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/laboratorio_java","postgres","qwerty");
             Statement statement = conection.createStatement();
             message.printMessage("Conexión exitosa!");
 
