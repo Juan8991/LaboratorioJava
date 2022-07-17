@@ -19,7 +19,7 @@ public class ControladorDePregutas {
     Integer numeroAleatorio1 = aleatorio.integerAleatorio(4, 7); // dificultad 2
     Integer numeroAleatorio2 = aleatorio.integerAleatorio(8, 11); // dificultad 3
     Integer numeroAleatorio3 = aleatorio.integerAleatorio(12, 15); // dificultad 4
-    Integer numeroAleatorio4 = aleatorio.integerAleatorio(16, 20); // dificultad 5
+    Integer numeroAleatorio4 = aleatorio.integerAleatorio(16, 19); // dificultad 5
 
     private Integer rondaJuego = 1;
     ArrayList<Pregunta> arrayPreguntas = new ArrayList<Pregunta>();

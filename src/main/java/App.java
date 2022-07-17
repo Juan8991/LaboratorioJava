@@ -81,9 +81,9 @@ public class App {
                  * Si es incorrecta se finaliza el juego y se termina la ejecucion del programa.
                  */
                 if (opciones == 0) {
-                    message.printMessage("salió, ganaste:" + puntajeJuego);
-                    message.printMessage("Ingrese su nombre:");
-                    nombreJugador = read.nextLine();
+                    message.printMessage("salió, ganaste:" + puntajeJuego+"" +
+                            "\nIngrese su nombre:");
+                    nombreJugador = read.next();
                     finalizarJuego(puntajeJuego, nombreJugador);
                     salir = true;
                 } else if (opciones == control.getFormaMostrar()) {
@@ -101,9 +101,9 @@ public class App {
                  * condicional para detectar que el jugador ha ganado
                  */
                 if (rondaActual > 5) {
-                    message.printMessage("ganaste: " + puntajeJuego);
-                    message.printMessage("Ingrese su nombre:");
-                    nombreJugador = read.nextLine();
+                    message.printMessage(" ganaste:" + puntajeJuego+"" +
+                            "\nIngrese su nombre:");
+                    nombreJugador = read.next();
                     finalizarJuego(puntajeJuego, nombreJugador);
                     salir = true;
                 }
