@@ -4,11 +4,19 @@ import java.util.ArrayList;
 
 import clases.Pregunta;
 
+/**
+ * Esta función guarda las preguntas en objetos de Tipo Pregunta, que a su vez se guardan 
+ * en un solo ArrayList dependiendo su dificiltad llamado colecionDeTodasLasPreguntas. 
+ * Entonces se guardan 4 objetos de tipo pregunta
+ * (1 objeto de tipo Pregunta por cada Categoria). 
+ * @returns la coleccion de preguntas. 
+ */
+
 public class AgregarPreguntas {
     
 
     public AgregarPreguntas() {
-
+      // TODO document why this constructor is empty
     }
 
     public ArrayList<Pregunta> agregarTodasLasPreguntas(){

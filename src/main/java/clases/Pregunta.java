@@ -1,5 +1,10 @@
 package clases;
 
+/**
+ * La clase Pregunta recibe en su contructor 6 parametros:
+ * La categoria de la pregunta, la pregunta, la respuesta
+ * correcta y 3 respuesta incorrectas.
+ */
 public class Pregunta {
     String categoria;
     String pregunta;
@@ -18,12 +23,6 @@ public class Pregunta {
         this.incorrecta3 = incorrecta3;
     }
 
-    @Override
-    public String toString() {
-        return "Pregunta [categoria=" + categoria + ", pregunta=" + pregunta + ", respuesta=" + rcorrecta
-                + ", incorrecta1=" + incorrecta1 + ", incorrecta2=" + incorrecta2 + ", incorrecta3=" + incorrecta3
-                + "]";
-    }
 
     
 
